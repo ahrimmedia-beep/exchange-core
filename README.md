@@ -26,7 +26,7 @@ This repository shows how to make that move without breaking the accounting:
 | `src/custody` | Deposit watcher for EVM chains (ERC-20 `Transfer` logs via viem) with confirmations and reorg rollback, HD deposit addresses, and a withdrawal state machine with risk checks, admin approval, a separate signer and an audit log. |
 | `src/api` | Fastify server: orders, cancel, order book, balances, withdrawals, admin approval, WebSocket stream. JSON schema validation and `Idempotency-Key` support. |
 
-121 tests: unit tests per module, a seeded property test for the ledger, a replay-equality test for the engine, reorg scenarios on a fake chain, API tests through `app.inject` and a WebSocket test. One Postgres test runs only when `DATABASE_URL` is set.
+121 tests: unit tests per module, a seeded property test for the ledger, a replay-equality test for the engine, reorg scenarios on a fake chain, API tests through `app.inject` and a WebSocket test. Two Postgres integration tests run when `DATABASE_URL` is set; CI runs them against a Postgres 16 service.
 
 ## How it fits together
 
